@@ -74,6 +74,7 @@ goose status
 ```
 
 ## Mockup
+
 ### Generate mock
 
 mockery --name=[interface name] --dir=[directory of interface] --output=[directory to write mocks] --filename=[name of generated file] --outpkg=[name of generated package] --structname=[name of generated struct]
@@ -85,27 +86,21 @@ mockery --name=UserRepo --dir=./core/port/ --output=./infrastructure/repo/mock/u
 ## Unit Test
 
 ### Run unit test
-go test -v ./path/to/test_file
-
 ```bash
-go test -v ./internal/core/service
+go test -v ./...
 ```
 
 ### Run unit test specific function
-go test -v -run [function name]
-
 ```bash
 go test -v -run TestProductCategory_Create_Success
 ```
 
 ### Check coverage
-
 ```bash
 go test -cover ./...
 ```
 
 ### Generate coverage
-
 ```bash
 go test -coverprofile=coverage ./... 
 ```
