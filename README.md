@@ -79,7 +79,7 @@ goose status
 mockery --name=[interface name] --dir=[directory of interface] --output=[directory to write mocks] --filename=[name of generated file] --outpkg=[name of generated package] --structname=[name of generated struct]
 
 ```bash
-mockery --name=Repo --dir=./core/port/user/ --output=./infrastructure/repo/mock/user --filename=repo.go --outpkg=user --structname=Repo
+mockery --name=UserRepo --dir=./core/port/ --output=./infrastructure/repo/mock/user --filename=repo.go --outpkg=user --structname=Repo
 ```
 
 ## Unit Test
@@ -92,7 +92,7 @@ go test -v ./internal/core/service
 ```
 
 ### Run unit test specific function
-go test -v [function name]
+go test -v -run [function name]
 
 ```bash
 go test -v -run TestProductCategory_Create_Success
