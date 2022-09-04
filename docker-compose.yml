@@ -1,0 +1,25 @@
+version: '3'
+services:
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5010:5432
+    volumes:
+      - db-shopping-cart:/var/lib/postgresql/data
+      - ./db/initdb/init.sql:/docker-entrypoint-initdb.d/init.sql
+    container_name: shopping-cart-db
+    environment:
+      POSTGRES_PASSWORD: mypass
+      # default user is postgres
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 5011:8080
+    container_name: shopping-cart-adminer
+
+volumes:
+  db-shopping-cart:
+    driver: local
