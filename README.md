@@ -2,7 +2,6 @@
 Shopping Cart API
 
 ## Requirements
-
 - [Golang](https://golang.org/) as main programming language.
 - [Go Module](https://go.dev/blog/using-go-modules) for package management.
 - [Goose](https://github.com/steinbacher/goose/) as migration tool.
@@ -20,7 +19,6 @@ docker-compose up
 ```
 
 ## Run the App
-
 ### Get packages
 
 ```bash
@@ -55,22 +53,22 @@ go build -o bin/shopping-cart -v .
 
 ### Create new migration
 ```bash
-goose create AddSomeColumns
+go run app/migration/psql/main.go create AddSomeColumns
 ```
 
 ### Up migration
 ```bash
-goose up
+go run app/migration/psql/main.go up
 ```
 
 ### Down migration
 ```bash
-goose down
+go run app/migration/psql/main.go down
 ```
 
 ### Check migration status
 ```bash
-goose status
+go run app/migration/psql/main.go status
 ```
 
 ## Mockup
